@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
-import { addTodo,toggleTodo } from '../actions'
+import { addTodo,toggleTodo,setVisibilityFilter } from '../actions'
 import App from '../components/app';
 
 function select(state){
 	return {
-		visibleTodos: state.todos
+		visibleTodos: state.todos,
+		visibilityFilter: state.visibilityFilter
 	}
 }
 
@@ -16,6 +17,9 @@ function dispatchProps(dispatch){
 		onTodoClick:(index)=>{
 			dispatch(toggleTodo(index))
 		},
+		onFilterChange:(nextFilter)=>{
+			dispatch(setVisibilityFilter(nextFilter))
+		}
 	}
 }
 
