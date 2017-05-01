@@ -5,6 +5,10 @@ import ReactDOM,{ render } from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
+import fnReducers from './reducers';
+
+let store = createStore(fnReducers);
+
 let Hello = ()=>{
 	return (<h1>Hello</h1>);
 }
