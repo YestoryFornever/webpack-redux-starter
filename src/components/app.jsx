@@ -3,19 +3,21 @@ import AddTodo from './add-todo';
 import TodoList from './todo-list';
 import Footer from './footer';
 
-const App = ({ visibleTodos, visibilityFilter, onAddClick, onTodoClick, onFilterChange })=>{
+const App = ({ visibleTodos, visibilityFilter, onAddClick, onTodoClick, onFilterChange }) => {
 	return (
 		<div>
 			<AddTodo
 				onAddClick={onAddClick} />
 			<TodoList
-				todos={visibleTodos} onTodoClick={onTodoClick} />
+				todos={visibleTodos}
+				onTodoClick={onTodoClick}
+				/>
 			<Footer
 				filter={visibilityFilter}
-				onFilterChange={onFilterChange}/>
+				onFilterChange={onFilterChange} />
 		</div>
-	);
-}
+	)
+};
 export default App;
 
 /*export default class App extends Component {
