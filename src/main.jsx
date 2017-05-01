@@ -1,12 +1,12 @@
 import './index.less';
-import React from 'react';
-import ReactDOM from 'react-dom';
 import $ from 'jquery';
+import React from 'react';
+import ReactDOM,{ render } from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
-class Hello extends React.Component{
-	render(){
-		return <h1>Hello</h1>
-	}
-};
+let Hello = ()=>{
+	return (<h1>Hello</h1>);
+}
 
 ReactDOM.render(<Hello/>,document.getElementById('app'));
