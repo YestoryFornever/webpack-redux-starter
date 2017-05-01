@@ -5,7 +5,11 @@ export default class TodoList extends Component {
 	render() {
 		return (
 			<ul>
-				<Todo/>
+				{this.props.todos.map((todo, index) =>
+					// console.log(todo);
+					<Todo {...todo}
+						key={index}/>
+				)}
 			</ul>
 		)
 	}
