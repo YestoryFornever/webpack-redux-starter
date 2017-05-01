@@ -8,6 +8,10 @@ import { Provider } from 'react-redux';
 import fnReducers from './reducers';
 let store = createStore(fnReducers);
 
-import Hello from './components/app';
-
-ReactDOM.render(<Hello/>,document.getElementById('app'));
+import App from './containers/app';
+render(
+	<Provider store={store}>
+		<App />
+	</Provider>,
+	document.getElementById('app')
+);
