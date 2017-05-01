@@ -1,5 +1,14 @@
 import React, { Component, PropTypes } from 'react';
-let Hello = ()=>{
-	return (<h1>Hello</h1>);
+import AddTodo from './add-todo'
+import TodoList from './todo-list'
+import Footer from './footer'
+let App = ()=>{
+	return (
+		<div>
+			<AddTodo/>
+			<TodoList/>
+			<Footer/>
+		</div>
+	);
 }
-export default Hello;
+export default App;
