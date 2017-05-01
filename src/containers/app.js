@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addTodo } from '../actions'
+import { addTodo,toggleTodo } from '../actions'
 import App from '../components/app';
 
 function select(state){
@@ -12,7 +12,10 @@ function dispatchProps(dispatch){
 	return {
 		onAddClick:(text) =>{
 			dispatch(addTodo(text))
-		}
+		},
+		onTodoClick:(index)=>{
+			dispatch(toggleTodo(index))
+		},
 	}
 }
 

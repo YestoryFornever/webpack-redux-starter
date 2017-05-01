@@ -3,13 +3,13 @@ import AddTodo from './add-todo';
 import TodoList from './todo-list';
 import Footer from './footer';
 
-const App = ({ visibleTodos,onAddClick })=>{
+const App = ({ visibleTodos, onAddClick, onTodoClick })=>{
 	return (
 		<div>
 			<AddTodo
 				onAddClick={onAddClick} />
 			<TodoList
-				todos={visibleTodos} />
+				todos={visibleTodos} onTodoClick={onTodoClick} />
 			<Footer/>
 		</div>
 	);

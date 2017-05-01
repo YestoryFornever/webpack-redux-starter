@@ -8,7 +8,8 @@ export default class TodoList extends Component {
 				{this.props.todos.map((todo, index) =>
 					// console.log(todo);
 					<Todo {...todo}
-						key={index}/>
+						key={index}
+						onClick={() => this.props.onTodoClick(index)} />
 				)}
 			</ul>
 		)
