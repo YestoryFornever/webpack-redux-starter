@@ -21,31 +21,42 @@ module.exports = {
 		publicPath: 'http://localhost:9999/',
 	},
 	module:{
-		loaders:[
+		rules:[
 			{
 				test: path.join(node_modules_path,'jquery'),
-				loader: 'expose-loader?jQuery!expose-loader?$'
+				use: [
+					'expose-loader?jQuery',
+					'expose-loader?$'
+				]
 			},
 			{
 				test: /\.js[x]?$/,
-				loader: 'babel-loader',
+				use: {
+					loader:'babel-loader',
+					options:{
+						presets: ['es2015', 'react']
+					}
+				},
 				exclude: /node_modules/,//黑名单
-				query: {
-					presets: ['es2015', 'react']
-				}
 			},
 			{
 				test:/\.less$/,
-				loader:'style-loader!css-loader!postcss-loader?{browsers:["last 2 version"]}!less-loader',
+				use:[
+					'style-loader',
+					'css-loader',
+					{
+						loader: 'postcss-loader',
+						options:{
+							browsers:["last 2 version"]
+						}
+					},
+					'less-loader'
+				],
 				include: path.resolve(__dirname, 'src')//白名单
 			},
 			{
-				test:/\.json$/,
-				loader:'json-loader',
-			},
-			{
 				test:/\.(png|jpg|woff|woff2)$/,
-				loader:'url-loader',
+				use:'url-loader',
 			},
 		]
 	},
